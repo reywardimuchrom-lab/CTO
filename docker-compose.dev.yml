@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: builder
+    command: sh -c "sleep 5 && go run ./cmd/api/main.go"
+    volumes:
+      - ./backend:/app
+      - backend_cache:/go/pkg/mod
+    environment:
+      - CGO_ENABLED=0
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile.dev
+    command: yarn dev --host
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
