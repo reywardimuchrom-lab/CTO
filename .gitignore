@@ -1,0 +1,30 @@
+# Binaries
+/bin/
+/build/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Go build cache
+*.out
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
+
+# Dependency directories
+vendor/
+
+# Env files
+.env
+.env.local
+
+# Logs
+*.log
+
+# Coverage
+coverage.*
