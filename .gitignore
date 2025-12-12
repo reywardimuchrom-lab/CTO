@@ -94,6 +94,14 @@ coverage/
 *.coverage
 *.coverprofile
 
+# 3D Website (Next.js)
+/3d-website/node_modules/
+/3d-website/.next/
+/3d-website/out/
+/3d-website/dist/
+/3d-website/.eslintcache
+/3d-website/coverage/
+
 # Temporary files
 tmp/
 temp/
