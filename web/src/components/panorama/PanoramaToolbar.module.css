@@ -1,0 +1,259 @@
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.selector {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.selectButton {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.selectButton:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.selectButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.selectLabel {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selectIcon {
+  margin-left: 0.5rem;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.selectButton[aria-label]:hover .selectIcon {
+  transform: translateY(2px);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dropdownItem {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.dropdownItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdownItem.active {
+  background: rgba(59, 130, 246, 0.3);
+  border-left: 3px solid rgb(59, 130, 246);
+  padding-left: calc(1rem - 3px);
+}
+
+.thumbnail {
+  width: 40px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.zoomControl {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.zoomLabel {
+  color: white;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.zoomSlider {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.zoomSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgb(59, 130, 246);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+  transition: all 0.2s ease;
+}
+
+.zoomSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.6);
+}
+
+.zoomSlider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgb(59, 130, 246);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+  transition: all 0.2s ease;
+}
+
+.zoomSlider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.6);
+}
+
+.zoomSlider:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.vrButton {
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.vrButton:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.vrButton.active {
+  background: rgb(59, 130, 246);
+  border-color: rgb(59, 130, 246);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.vrButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.vrIcon {
+  font-size: 1.25rem;
+}
+
+.vrText {
+  font-size: 0.9rem;
+}
+
+.status {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.loading {
+  color: rgb(59, 130, 246);
+}
+
+.error {
+  color: rgb(239, 68, 68);
+}
+
+.errorText {
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .container {
+    gap: 1rem;
+  }
+
+  .selector {
+    min-width: 150px;
+  }
+
+  .zoomControl {
+    min-width: 120px;
+    gap: 0.5rem;
+  }
+
+  .zoomLabel {
+    font-size: 0.8rem;
+  }
+
+  .vrText {
+    display: none;
+  }
+
+  .vrButton {
+    padding: 0.75rem 0.875rem;
+  }
+}
